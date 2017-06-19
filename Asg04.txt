@@ -1,0 +1,52 @@
+Question 01
+//Display CNAME using the HAVING clause to filter the result set to only those records of CNAME column that have a count of greater than two(i.e. HAVING COUNT(*) >2).
+1.a : select CNAME from customer group by DOB having count(*) > 2;
+
+//Select all Customers from the Customer table and group them by the CNAME.
+1.b : select * from customer group by CNAME;
+
+//Select all records from Customer table, then orders them by the CNAME field in ascending order.
+1.c : select * from customer order by cname;
+
+Question 02
+a) HAVING Clause:
+	The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+	Syntax:
+	SELECT column_name(s)
+	FROM table_name
+	GROUP BY column_name(s)
+	HAVING condition;
+
+	Example:
+	select CNAME from customer group by DOB having count(*) > 2;
+	This will list those records that have count greater that 2 for CNAME grouped by DOB.
+
+b) OREDER BY
+	It is used to sort the column based on given key. Sorting can be in Ascending or Descending order.
+	Syntax:
+	SELECT column_name(s)
+	FROM table_name
+	ORDER BY column_name(s);
+
+	Example:
+	SELECT CNAME from customer ORDER BY CNAME; //ascending
+	SELECT CNAME from customer ORDER BY CNAME DESC; //descending
+
+c) GROUP BY
+	It is used to group the columns which has similat values for multiple records.
+	Synatx:
+	SELECT column_name(s)
+	FROM table_name
+	GROUP BY column_name(s);
+
+	Example:
+	SELECT count(*) from customer GROUP BY DOB; //groups the records which have same DOB
+	
+
+Question 03
+
+a) truncate table customer; //first account table needs to de droppes as it references CID as foreign key, hence this table can not be truncated or dropped.
+b) alter table account rename to CUSTOMER_ACCOUNTS;
+c) drop table customer; //first customer_accounts table needs to be dropped.
+d) drop table customer_accounts;
+
